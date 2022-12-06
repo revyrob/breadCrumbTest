@@ -1,7 +1,7 @@
 # breadCrumbTest
 breadCrumb test for ParseHub with React, Node, Express
 
-#To run
+# To run
 In the main folder run
 npm install
 
