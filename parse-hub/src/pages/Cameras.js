@@ -29,7 +29,7 @@ function Cameras() {
         <Link to={"/"}>Home</Link> <img src={chevron} alt="chevron" /> {path}{" "}
       </div>
       <section className="cameras">
-        <h1>Cameras Catelog</h1>
+        <h1 className="title">Cameras Catelog</h1>
         <div className="cameras__cat">
           {/* div that maps through the CameraItems and has a link that goes through
               the appropriate path */}

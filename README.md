@@ -1,4 +1,4 @@
-# breadCrumbTest
+# Breadcrumb test for ParseHub
 breadCrumb test for ParseHub with React, Node, Express
 
 # To run

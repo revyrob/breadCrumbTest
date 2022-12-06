@@ -24,8 +24,25 @@ app.get("/electronics", (req, res) => {
     if (err) {
       res.send("sorry no info found");
     } else {
+      console.log(data);
       const electronics = JSON.parse(data);
       res.json(electronics);
+    }
+  });
+});
+
+/*
+ * Get single item
+ */
+app.get("/:id", (req, res) => {
+  loadElectronicData((err, lenseData) => {
+    if (err) {
+      res.send("error getting electronic data");
+    } else {
+      const lenses = JSON.parse(lenseData);
+      const foundLense = lenses.find((lense) => lense.id == req.params.lense);
+      console.log(lenses);
+      res.json(foundLense);
     }
   });
 });
