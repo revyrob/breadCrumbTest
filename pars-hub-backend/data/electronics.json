@@ -1,0 +1,67 @@
+{
+    "Cameras": [
+        {
+            "DSLR Cameras": [],
+            "image": "http://localhost:8080/images/cameras.png",
+            "id": "345439ikdf",
+            "product": "DSLR Cameras",
+            "link": "dslr-cameras"
+        },
+        {
+            "Drones": [],
+            "image": "http://localhost:8080/images/drones.png",
+            "id": "98054yojlkfj",
+            "product": "Drones",
+            "link": "drones"
+        },
+        {
+            "Accessories": [
+                {
+                    "Lenses": [
+                        {
+                            "product": "DSLR Lenses",
+                            "image": "http://localhost:8080/images/lense3.png",
+                            "id": "12354yosdfdsfjlkfj"
+                        },
+                        {
+                            "product": "Big Lense",
+                            "image": "http://localhost:8080/images/lense1.png",
+                            "id": "65054yosdfdsfjlkfj"
+                        },
+                        {
+                            "product": "Fancy Lense",
+                            "image": "http://localhost:8080/images/lense2.png",
+                            "id": "986575054yosdfdsfjlkfj"
+                        }
+                    ],
+                    "image": "http://localhost:8080/images/lenses.png",
+                    "id": "98054yosdfdsfjlkfj",
+                    "product": "Lenses",
+                    "link": "lenses"
+                },
+                {
+                    "Flashes": [
+                        {
+                            "product": "GoPro Light Mod for HERO11/10/9",
+                            "image": "http://localhost:8080/images/flash1.png",
+                            "id": "986575054yosdfdsf88jlkfj"
+                        },
+                        {
+                            "product": "Digipower Streamer Video Light",
+                            "image": "http://localhost:8080/images/flash2.png",
+                            "id": "986575054yosdfdsfj55lkfj"
+                        }
+                    ],
+                    "image": "http://localhost:8080/images/flash1.png",
+                    "id": "98054yojhsghfglkfj",
+                    "product": "Flashes",
+                    "link": "flashes"
+                }
+            ],
+            "image": "http://localhost:8080/images/acces.png",
+            "id": "98tkerjg432432perupo",
+            "product": "Accessories",
+            "link": "accessories"
+        }
+    ]
+}

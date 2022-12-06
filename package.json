@@ -1,0 +1,19 @@
+{
+  "name": "parsehub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "(cd parse-hub && npm install); (cd pars-hub-backend && npm install )",
+    "client": "npm start --prefix ./parse-hub",
+    "server": "npm start --prefix ./pars-hub-backend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.6.0",
+    "nodemon": "^2.0.20"
+  }
+}
