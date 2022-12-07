@@ -24,7 +24,6 @@ app.get("/electronics", (req, res) => {
     if (err) {
       res.send("sorry no info found");
     } else {
-      console.log(data);
       const electronics = JSON.parse(data);
       res.json(electronics);
     }
@@ -32,17 +31,30 @@ app.get("/electronics", (req, res) => {
 });
 
 /*
+ *Function to find nested object, the id
+ */
+function findNestedObj(entireObj, keyToFind, valToFind) {
+  let foundObj;
+  JSON.stringify(entireObj, (_, nestedValue) => {
+    if (nestedValue && nestedValue[keyToFind] === valToFind) {
+      foundObj = nestedValue;
+    }
+    return nestedValue;
+  });
+  return foundObj;
+}
+
+/*
  * Get single item
  */
-app.get("/:id", (req, res) => {
+app.get("/electronics/:id", (req, res) => {
   loadElectronicData((err, lenseData) => {
     if (err) {
       res.send("error getting electronic data");
     } else {
       const lenses = JSON.parse(lenseData);
-      const foundLense = lenses.find((lense) => lense.id == req.params.lense);
-      console.log(lenses);
-      res.json(foundLense);
+      const foundData = findNestedObj(lenses, "id", req.params.id);
+      res.json(foundData);
     }
   });
 });

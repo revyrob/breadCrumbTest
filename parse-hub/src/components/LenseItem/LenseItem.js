@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function LenseItem({ product, image, id }) {
+function LenseItem({ id, image, product }) {
   return (
     <div className="LenseItems">
       {" "}

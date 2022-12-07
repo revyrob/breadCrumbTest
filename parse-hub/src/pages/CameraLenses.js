@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import chevron from "../assets/icons/chevron.svg";
 import { useParams } from "react-router-dom";
 import LenseItem from "../components/LenseItem/LenseItem";
+import SingleItem from "../components/SingleItem/SingleItem";
 
 function CameraLenses() {
   const [path, setPath] = useState("unknown");
@@ -27,16 +28,15 @@ function CameraLenses() {
     axios
       .get(`http://localhost:8080/electronics/${id}`)
       .then((response) => {
-        console.log("getLenseById", response);
-        console.log(response.data.Cameras[2].Accessories[0].Lenses);
-        setLense(response.data.Cameras[2].Accessories[0].Lenses);
+        console.log(response.data);
+        setLense(response.data);
       })
       .catch((err) => console.log(err));
   };
 
   useEffect(() => {
     if (lenseId !== undefined) {
-      getLenseById(lenseId); // get single joke by id, if param is set
+      getLenseById(lenseId);
     } else {
       getOptions();
     }
@@ -47,31 +47,43 @@ function CameraLenses() {
   }
 
   return (
-    <div className="path">
-      <Link to={"/"}>Home</Link> <img src={chevron} alt="chevron" />{" "}
-      <Link to={"/home/cameras"}>Cameras</Link>{" "}
-      <img src={chevron} alt="chevron" />{" "}
-      <Link to={"/category/cameras/accessories"}>Accessories</Link>{" "}
-      <img src={chevron} alt="chevron" /> {path}
+    <>
       {lenseId !== undefined ? (
-        <LenseItem lense={lense} />
+        <div className="path">
+          <Link to={"/"}>Home</Link> <img src={chevron} alt="chevron" />{" "}
+          <Link to={"/home/cameras"}>Cameras</Link>{" "}
+          <img src={chevron} alt="chevron" />{" "}
+          <img src={chevron} alt="chevron" />{" "}
+          <Link to={"/home/cameras/accessories"}>Accessories</Link>{" "}
+          <img src={chevron} alt="chevron" />{" "}
+          <Link to={"/home/cameras/accessories/lenses"}>Lenses</Link>
+          <img src={chevron} alt="chevron" /> {lense.product}
+          <SingleItem lense={lense} />
+        </div>
       ) : (
-        <section className="cameras">
-          <h1 className="title">Cameras Lenses</h1>
-          <div className="cameras__cat">
-            {options.map((item) => (
-              <LenseItem
-                id={item.id}
-                key={item.id}
-                product={item.product}
-                image={item.image}
-                link={item.link}
-              />
-            ))}
-          </div>
-        </section>
+        <div className="path">
+          <Link to={"/"}>Home</Link> <img src={chevron} alt="chevron" />{" "}
+          <Link to={"/home/cameras"}>Cameras</Link>{" "}
+          <img src={chevron} alt="chevron" />{" "}
+          <Link to={"/category/cameras/accessories"}>Accessories</Link>{" "}
+          <img src={chevron} alt="chevron" /> {path}
+          <section className="cameras">
+            <h1 className="title">Cameras Lenses</h1>
+            <div className="cameras__cat">
+              {options.map((item) => (
+                <LenseItem
+                  id={item.id}
+                  key={item.id}
+                  product={item.product}
+                  image={item.image}
+                  link={item.link}
+                />
+              ))}
+            </div>
+          </section>
+        </div>
       )}
-    </div>
+    </>
   );
 }
 
