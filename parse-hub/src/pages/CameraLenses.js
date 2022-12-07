@@ -53,7 +53,6 @@ function CameraLenses() {
           <Link to={"/"}>Home</Link> <img src={chevron} alt="chevron" />{" "}
           <Link to={"/home/cameras"}>Cameras</Link>{" "}
           <img src={chevron} alt="chevron" />{" "}
-          <img src={chevron} alt="chevron" />{" "}
           <Link to={"/home/cameras/accessories"}>Accessories</Link>{" "}
           <img src={chevron} alt="chevron" />{" "}
           <Link to={"/home/cameras/accessories/lenses"}>Lenses</Link>

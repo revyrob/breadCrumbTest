@@ -6,6 +6,7 @@ import Assor from "./pages/Assor";
 import CameraLenses from "./pages/CameraLenses";
 import "./App.scss";
 import NavField from "./components/NavField/NavField";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -24,18 +25,7 @@ function App() {
           path="/category/cameras/accessories/lenses/:lenseId"
           element={<CameraLenses />}
         />
-        {/* <Route
-          path="/category/cameras/accessories/lenses/dslrLenses"
-          element={<DslrLenses />}
-        /> */}
-        {/* <Route
-          path="/category/cameras/accessories/lenses/dslrLenses/:lenseId"
-          element={<DslrLenses />}
-        />
-        <Route
-          path="/category/cameras/accessories/lenses/dslrLenses"
-          element={<DslrLenses />}
-        /> */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );

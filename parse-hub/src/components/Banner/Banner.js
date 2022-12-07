@@ -4,7 +4,6 @@ import camera from "../../assets/images/camera.png";
 import christmas from "../../assets/images/christmas.png";
 import headphones from "../../assets/images/headphone.png";
 import { Link } from "react-router-dom";
-
 import Button from "react-bootstrap/Button";
 
 function Banner() {
