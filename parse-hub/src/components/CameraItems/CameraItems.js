@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+//camera items for when mapping through the camera items
 function CameraItems({ product, image, link }) {
   return (
     <div className="cameraItems">

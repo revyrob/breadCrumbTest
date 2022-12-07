@@ -7,6 +7,7 @@ import LenseItem from "../components/LenseItem/LenseItem";
 import SingleItem from "../components/SingleItem/SingleItem";
 
 function CameraLenses() {
+  //states for path, loading, options, lenses and useParams for the item
   const [path, setPath] = useState("unknown");
   const [options, setOptions] = useState("Empty");
   const [isLoading, setLoading] = useState(true);
@@ -24,6 +25,7 @@ function CameraLenses() {
       .catch((err) => console.log(err));
   };
 
+  //function for get the info from the id for each lense
   const getLenseById = (id) => {
     axios
       .get(`http://localhost:8080/electronics/${id}`)
@@ -34,6 +36,8 @@ function CameraLenses() {
       .catch((err) => console.log(err));
   };
 
+  //useEffect for if there is a lenseId in params
+  //if no params sset the options of lenses
   useEffect(() => {
     if (lenseId !== undefined) {
       getLenseById(lenseId);
@@ -46,6 +50,9 @@ function CameraLenses() {
     return <div className="App">Loading...</div>;
   }
 
+  //have a tenary statement in the return so that if we have a param
+  //we are shown just the one item
+  //if there is no param then show all the lenses
   return (
     <>
       {lenseId !== undefined ? (

@@ -6,13 +6,12 @@ import axios from "axios";
 import chevron from "../assets/icons/chevron.svg";
 
 function CameraAssor() {
-  //this is the parent therefore i want to call to the backend and get the
-  //information and pass it on through children
-
+  //states for path, info from backend, and loading
   const [path, setPath] = useState("unknown");
   const [options, setOptions] = useState("Empty");
   const [isLoading, setLoading] = useState(true);
 
+  //call backend, get info, set states
   useEffect(() => {
     axios.get("http://localhost:8080/electronics").then((response) => {
       setOptions(response.data.Cameras[2].Accessories);

@@ -1,5 +1,7 @@
 import React from "react";
 import "./SingleItem.scss";
+
+//single item for lense
 function SingleItem({ lense }) {
   return (
     <>

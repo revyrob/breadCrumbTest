@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "postinstall": "(cd parse-hub && npm install); (cd pars-hub-backend && npm install )",
+    "postinstall": "cd parse-hub && npm install",
+    "postinstall2": "cd pars-hub-backend && npm install",
     "client": "npm start --prefix ./parse-hub",
     "server": "npm start --prefix ./pars-hub-backend",
     "dev": "concurrently \"npm run server\" \"npm run client\""

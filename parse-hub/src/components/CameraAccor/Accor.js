@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+//camera accessories items
 function Accor({ product, image, link }) {
   return (
     <div>

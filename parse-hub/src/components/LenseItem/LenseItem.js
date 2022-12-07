@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+//lense item for when listing all the lenses on the lenses page
 function LenseItem({ id, image, product }) {
   return (
     <div className="LenseItems">

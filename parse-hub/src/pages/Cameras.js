@@ -11,6 +11,10 @@ function Cameras() {
   const [options, setOptions] = useState("Empty");
   const [isLoading, setLoading] = useState(true);
 
+  //get the info from the backedn
+  //set the path for component
+  //set the info with setOption
+  //set the loading while we wait for the info from the backend
   useEffect(() => {
     axios.get("http://localhost:8080/electronics").then((response) => {
       setPath(Object.keys(response.data));
