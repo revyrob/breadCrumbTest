@@ -6,7 +6,10 @@ In the main folder run
 npm install
 
 then...
-npm run postinstall postinstall2 
+npm run postinstall  
+
+then...
+npm run postinstall2 
 
 after...
 npm run dev
